@@ -1,2 +1,2 @@
-# Portifolio
- Building a portifolio by myself 
+# Portfolio
+ Building a portfolio by myself 
