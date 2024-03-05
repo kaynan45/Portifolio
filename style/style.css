@@ -1,0 +1,43 @@
+.posts-area{
+    background-color: rgb(179, 178, 178);
+    height: 100vh;
+    margin-left: 800px;
+    margin-right: 200px;
+    padding: 30px;
+}
+
+.posts-grid{
+    padding: 30px;
+    display: grid;
+    background-color: rgb(122, 141, 135);
+    height: 90vh;
+    grid-template-columns: repeat(1);
+    grid-row: 10px;
+    border-radius: 20px;
+}
+
+.post{
+    display: flex;
+    flex-direction: column;
+    
+    margin: 20px 180px 20px 180px;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 2px 2px 2px;
+}
+
+.post-title{
+    
+    text-align: center;
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.post-content{
+    margin: 30px;
+}
+
+.post-author{
+    margin-left: 30px;
+    font-weight: bold;
+}
