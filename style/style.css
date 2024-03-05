@@ -1,43 +1,78 @@
-.posts-area{
-    background-color: rgb(179, 178, 178);
-    height: 100vh;
-    margin-left: 800px;
-    margin-right: 200px;
-    padding: 30px;
+body {
+  background-color: gray;
 }
 
-.posts-grid{
-    padding: 30px;
-    display: grid;
-    background-color: rgb(122, 141, 135);
-    height: 90vh;
-    grid-template-columns: repeat(1);
-    grid-row: 10px;
-    border-radius: 20px;
+.posts-area {
+  background-color: rgb(179, 178, 178);
+  height: auto;
+  margin-left: 800px;
+  margin-right: 200px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
 }
 
-.post{
-    display: flex;
-    flex-direction: column;
-    
-    margin: 20px 180px 20px 180px;
-    background-color: white;
-    border-radius: 20px;
-    box-shadow: 2px 2px 2px;
+.new-post-area {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 5px;
+  background-color: black;
+  height: 120px;
+  border-radius: 10px;
 }
 
-.post-title{
-    
-    text-align: center;
-    font-size: 30px;
-    font-family: Arial, Helvetica, sans-serif;
+.post-input {
+  border-radius: 5px;
+  margin-right: 5px;
+  background-color: rgb(167, 194, 186);
+  height: 20px;
 }
 
-.post-content{
-    margin: 30px;
+.add-post-button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  cursor: pointer;
 }
 
-.post-author{
-    margin-left: 30px;
-    font-weight: bold;
+.add-post-button:hover {
+  background-color: #45a049;
+}
+
+.posts-grid {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  display: grid;
+  background-color: rgb(122, 141, 135);
+  height: 90vh;
+  grid-template-columns: repeat(1);
+  border-radius: 20px;
+}
+
+.post {
+  display: flex;
+  flex-direction: column;
+  margin: 20px 180px 20px 180px;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 2px 2px 2px;
+}
+
+.post-title {
+  text-align: center;
+  font-size: 30px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.post-content {
+  margin: 30px;
+}
+
+.post-author {
+  margin-left: 30px;
+  font-weight: bold;
 }
