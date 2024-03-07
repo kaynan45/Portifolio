@@ -1,32 +1,36 @@
 body {
-  background-color: gray;
+  background-color: #f0f0f0; /* Use a lighter gray background */
+  margin: 0; /* Remove default body margin */
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
 .posts-area {
-  background-color: rgb(179, 178, 178);
-  height: auto;
-  margin-left: 800px;
-  margin-right: 200px;
-  padding: 30px;
-  display: flex;
-  flex-direction: column;
+  background-color: #dcdcdc; /* Lighter gray background for posts area */
+  width: 400px; /* Adjust the width */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .new-post-area {
   display: flex;
   align-items: center;
-  justify-content: center;
-  margin: 5px;
-  background-color: black;
-  height: 120px;
-  border-radius: 10px;
+  justify-content: space-between;
+  margin-bottom: 10px;
 }
 
 .post-input {
+  flex-grow: 1; /* Allow input to grow and take available space */
+  border: 1px solid #a0a0a0;
   border-radius: 5px;
-  margin-right: 5px;
-  background-color: rgb(167, 194, 186);
-  height: 20px;
+  padding: 10px;
 }
 
 .add-post-button {
@@ -45,34 +49,27 @@ body {
 .posts-grid {
   display: flex;
   flex-direction: column;
-  padding: 30px;
-  display: grid;
-  background-color: rgb(122, 141, 135);
-  height: 90vh;
-  grid-template-columns: repeat(1);
-  border-radius: 20px;
+  padding: 20px;
 }
 
 .post {
-  display: flex;
-  flex-direction: column;
-  margin: 20px 180px 20px 180px;
+  margin-bottom: 20px;
   background-color: white;
-  border-radius: 20px;
-  box-shadow: 2px 2px 2px;
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 
 .post-title {
   text-align: center;
-  font-size: 30px;
-  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  margin: 10px 0;
 }
 
 .post-content {
-  margin: 30px;
+  margin: 10px 20px;
 }
 
 .post-author {
-  margin-left: 30px;
+  margin-left: 20px;
   font-weight: bold;
 }

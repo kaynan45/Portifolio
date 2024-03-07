@@ -1,21 +1,30 @@
-import { posts } from "./data.js";
+const miniGold = {
+  users: [
+    {
+      username: "kaynan45",
+    },
+  ],
+  posts: [
+    {
+      id: 1,
+      owner: "kaynan45",
+      content: "First goldy",
+    },
+  ],
+};
 
 const postInput = document.querySelector(".post-input");
 const newPostButton = document.querySelector(".add-post-button");
+const postsArea = document.querySelector(".posts-grid");
 
 newPostButton.addEventListener("click", () => {
+  postsArea.insertAdjacentHTML("afterbegin", `<li>${postInput.value}</li>`);
 
-  
-  let postHtml = "";
-  posts.forEach((post) => {
-    postHtml += `
-    <div class="post">
-        <h3 class="post-title">${post.title}</h3>
-        <p class="post-content"> ${post.content} </p>
-        <p class="post-author">${post.author}</p>
-    </div>
-    `;
+  miniGold.posts.push({
+    id: miniGold.posts.length + 1,
+    owner: "kaynan45",
+    content: postInput.value,
   });
-
-  document.querySelector(".posts-grid").innerHTML = postHtml;
+  console.log(miniGold.posts);
+  postInput.value = "";
 });
