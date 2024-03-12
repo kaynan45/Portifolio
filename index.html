@@ -4,21 +4,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style/style.css">
+    <title>Events manager</title>
+    <link rel="stylesheet" href="style/main.css">
+    <link rel="stylesheet" href="style/modal.css">
+    <link rel="stylesheet" href="style/button.css">
+    <link rel="stylesheet" href="style/records.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 
 <body>
-    <div class="container">
-        <div class="posts-area">
-            <div class="new-post-area">
-                <input type="text" class="post-input" placeholder="Type your new post...">
-                <button class="add-post-button">New post</button>
-            </div>
-            <div class="posts-grid">
+    <button type="button" class="button blue mobile" id="cadastrarCliente">New Event</button>
+    <table id="js-clients-table" class="records">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>E-mail</th>
+                <th>Phone</th>
+                <th>City</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
 
-            </div>
+        </tbody>
+    </table>
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <header class="modal-header">
+                <h2>New Event</h2>
+                <span class="modal-close">X</span>
+            </header>
+            <form class="modal-form">
+                <input class="modal-field" id="js-input-name" type="text" placeholder="Type the event name">
+                <input class="modal-field" id="js-input-date" type="text" placeholder="Type the event date">
+                <input class="modal-field" id="js-input-quality" type="text" placeholder="Type the event quality">
+                <input class="modal-field" id="js-input-price" type="text" placeholder="Type the event price">
+            </form>
+            <footer class="modal-footer">
+                <button class="button green" id="js-save-button">Save</button>
+                <button class="button red">Cancel</button>
+            </footer>
         </div>
     </div>
     <script src="javaScript/script.js"></script>
