@@ -1,10 +1,15 @@
-
-document.
+const openModal = () => {
+  document.getElementById("modal").classList.add("active");
+};
 
 const closeModal = () => {
-  modal.classList.remove("active")
+  document.getElementById("modal").classList.remove("active");
 };
 
-const openModal = () => {
-  modal.classList.add("active")
-};
+document
+  .getElementById("new-event")
+  .addEventListener("click", () => openModal());
+
+document
+  .querySelector(".modal-close")
+  .addEventListener("click", () => closeModal());
