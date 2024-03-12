@@ -13,40 +13,45 @@
 </head>
 
 <body>
-    <button type="button" class="button blue mobile" id="new-event">New Event</button>
-    <table id="js-clients-table" class="records">
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>E-mail</th>
-                <th>Phone</th>
-                <th>City</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
+    <header>
+        <h1 class="header-title">Events</h1>
+    </header>
+    <main>
+        <button type="button" class="button blue mobile" id="new-event">New Event</button>
+        <table id="js-clients-table" class="records">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>E-mail</th>
+                    <th>Phone</th>
+                    <th>City</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
 
-        </tbody>
-    </table>
-    <div class="modal" id="modal">
-        <div class="modal-content">
-            <header class="modal-header">
-                <h2>New Event</h2>
-                <span class="modal-close">X</span>
-            </header>
-            <form class="modal-form">
-                <input class="modal-field" id="js-input-name" type="text" placeholder="Type the event name">
-                <input class="modal-field" id="js-input-date" type="text" placeholder="Type the event date">
-                <input class="modal-field" id="js-input-quality" type="text" placeholder="Type the event quality">
-                <input class="modal-field" id="js-input-price" type="text" placeholder="Type the event price">
-            </form>
-            <footer class="modal-footer">
-                <button class="button green" id="js-save-button">Save</button>
-                <button class="button red">Cancel</button>
-            </footer>
+            </tbody>
+        </table>
+        <div class="modal" id="modal">
+            <div class="modal-content">
+                <header class="modal-header">
+                    <h2>New Event</h2>
+                    <span class="modal-close">X</span>
+                </header>
+                <form class="modal-form">
+                    <input class="modal-field" id="js-input-name" type="text" placeholder="Type the event name">
+                    <input class="modal-field" id="js-input-date" type="text" placeholder="Type the event date">
+                    <input class="modal-field" id="js-input-quality" type="text" placeholder="Type the event quality">
+                    <input class="modal-field" id="js-input-price" type="text" placeholder="Type the event price">
+                </form>
+                <footer class="modal-footer">
+                    <button class="button green" id="js-save-button">Save</button>
+                    <button class="button red">Cancel</button>
+                </footer>
+            </div>
         </div>
-    </div>
-    <script src="javaScript/script.js"></script>
+        <script src="javaScript/script.js"></script>
+    </main>
 </body>
 
 </html>
