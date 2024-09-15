@@ -1,0 +1,27 @@
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #17252A;
+  color: #feffff;
+  padding: .7em;
+}
+
+li {
+  align-items: center;
+  cursor: pointer;
+}
+
+li svg {
+  font-size: 1.3em;
+  transition: ease .3s;
+}
+
+li svg:hover {
+  color: #2b7a78;
+}
+
+p{
+  align-items: center;
+  margin-right: 10px;
+}

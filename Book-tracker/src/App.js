@@ -5,6 +5,7 @@ import AddBooks from "./components/pages/AddBooks";
 import BookList from "./components/pages/BookList";
 import Navbar from "./components/layout/Navbar";
 import Container from "./components/layout/Container";
+import Footer from "./components/layout/Footer";
 
 function App() {
   return (
@@ -17,7 +18,7 @@ function App() {
           <Route path="/book-list" element={<BookList />} />
         </Routes>
       </Container>
-      <p>Footer</p>
+      <Footer />
     </Router>
   );
 }
