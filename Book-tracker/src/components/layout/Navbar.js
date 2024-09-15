@@ -20,7 +20,7 @@ function Navbar() {
             <Link to="/add-books">Add books</Link>
           </li>
           <li>
-            <Link to="/book-list">Home</Link>
+            <Link to="/book-list">Book list</Link>
           </li>
         </ul>
       </Container>
