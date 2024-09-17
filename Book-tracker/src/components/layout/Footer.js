@@ -4,7 +4,7 @@ import { FaFacebook, FaInstagram, FaLinkedin } from 'react-icons/fa'
 
 function Footer() {
   return (
-    <footer>
+    <footer className={styles.footer}>
       <p><span>Book-tracker</span> &copy; 2024</p>
       <ul>
         <li>

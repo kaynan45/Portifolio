@@ -1,4 +1,4 @@
-footer {
+.footer {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -8,7 +8,7 @@ footer {
   padding: .7em;
 }
 
-li {
+.footer li {
   align-items: center;
   cursor: pointer;
 }
