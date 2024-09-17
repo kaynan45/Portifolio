@@ -1,0 +1,16 @@
+.bookList {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #feffff;
+  padding: 2em;
+}
+
+.bookList div {
+  /* border: solid red; */
+  display: flex;
+  background-color: #def2f1;
+  padding: 1em;
+  margin-bottom: .5em;
+}

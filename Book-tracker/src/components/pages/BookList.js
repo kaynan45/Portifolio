@@ -1,7 +1,9 @@
+import ListBooks from "../layout/ListBooks";
+
 function BookList() {
   return (
-    <h1>BookList content</h1>
-  )
+    <ListBooks />
+  );
 }
 
-export default BookList
+export default BookList;

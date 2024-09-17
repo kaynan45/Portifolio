@@ -1,3 +1,16 @@
 {
-  "book-list": []
+  "book-list": [
+    {
+      "name": "how to win friends and influence people",
+      "author": "Dale Carnegie"
+    },
+    {
+      "name": "Atomic habits",
+      "author": "James Clear"
+    },
+    {
+      "name": "how to win friends and influence people",
+      "author": "Dale Carnegie"
+    }
+  ]
 }
