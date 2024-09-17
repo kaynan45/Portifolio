@@ -1,24 +1,19 @@
 import styles from "./ListBooks.module.css";
 
-function ListBooks({ name, author }) {
+function ListBooks({ book }) {
   return (
     <div>
       <ul className={styles.bookList}>
-        <div className={styles.bookAuthor}>
-          <li>
-            <span>Author one</span>
-            <p>Book one</p>
-          </li>
-        </div>
         <div>
-          <li>
-            <span>Author one</span>
-            <p>Book one</p>
-          </li>
+          {book.map((book) => (
+            <li className={styles.bookAuthor} key={book.name}>
+              <span>{book.author}</span> <p>{book.name}</p>
+            </li>
+          ))}
         </div>
       </ul>
     </div>
-  )
+  );
 }
 
-export default ListBooks
+export default ListBooks;
