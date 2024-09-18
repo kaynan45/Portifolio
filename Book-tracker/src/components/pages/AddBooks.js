@@ -1,24 +1,47 @@
+import Input from "../form/Input";
 import styles from "./AddBooks.module.css";
+import { useState } from "react";
 
 function AddBooks() {
-  function addBook(e) {
+  const [book, setBook] = useState({});
+  // const book = {
+  //   name: "book test",
+  //   author: "author test"
+  // }
+
+  function onChange(e) {
+    (setBook({...book,[e.target.value]: e.target.name}))
+    console.log(book)
+  }
+
+  function addBookName(e) {
     e.preventDefault();
-    alert("book added!");
+    fetch("http://localhost:5000/book-list", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(book),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+      })
+      .catch((error) => console.log(error));
   }
 
   return (
     <section className={styles.bookSection}>
       <h1>Add your books!</h1>
       <form className={styles.booksForm}>
-        <div>
-          <label>Book name</label>
-          <input type="text" className={styles.bookInputs}/>
-        </div>
-        <div>
-          <label>Book author</label>
-          <input type="text" className={styles.bookInputs}/>
-        </div>
-        <input className={styles.addBook} value="Add Book" type="submit" onClick={addBook} />
+        <Input label="Book name" type="text" onChange={onChange}/>
+        <Input label="Book author" type="text" onChange={onChange}/>
+        <input
+          className={styles.addBook}
+          value="Add Book"
+          type="submit"
+          // onClick={addBookName}
+        />
       </form>
     </section>
   );

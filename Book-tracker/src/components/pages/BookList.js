@@ -6,7 +6,12 @@ function BookList() {
   const [book, setBook] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/book-list")
+    fetch("http://localhost:5000/book-list", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
       .then((resp) => resp.json())
       .then((data) => {
         setBook(data);
