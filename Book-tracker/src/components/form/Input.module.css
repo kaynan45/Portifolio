@@ -1,0 +1,30 @@
+
+.book {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1em;
+}
+
+.book label {
+  color: #feffff;
+  font-size: larger;
+  font-size: larger;
+  font-weight: bold;
+  margin-bottom: 2px;
+}
+
+.book input {
+  height: 2em;
+  padding-left: 4px;
+  border-radius: 5px;
+  font-size: 1.2em;
+  background-color: #feffff;
+  color: #333;
+}
+
+.book input:focus {
+  outline: none;
+  border-width: 3px;
+  border-color: #3aafa9;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+}
