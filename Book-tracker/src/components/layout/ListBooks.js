@@ -6,7 +6,7 @@ function ListBooks({ book }) {
       <ul className={styles.bookList}>
         <div>
           {book.map((book) => (
-            <li className={styles.bookAuthor} key={book.name}>
+            <li className={styles.bookAuthor} key={book.id}>
               <span>{book.author}</span> <p>{book.name}</p>
             </li>
           ))}

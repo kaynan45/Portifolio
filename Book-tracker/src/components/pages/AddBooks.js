@@ -1,18 +1,14 @@
 import Input from "../form/Input";
+import SubmitButton from "../form/SubmitButton";
 import styles from "./AddBooks.module.css";
 import { useState } from "react";
 
 function AddBooks() {
-  const [book, setBook] = useState({});
-  // const book = {
-  //   name: "book test",
-  //   author: "author test"
-  // }
+  const [book, setBook] = useState({name: '', author: ''});
 
   function onChange(e) {
     //By spreading (...book), we're keeping the previous data intact while updating only the specific field that changed.
     setBook({ ...book, [e.target.name]: e.target.value });
-    console.log(book);
   }
 
   function addBook(e) {
@@ -25,10 +21,8 @@ function AddBooks() {
       body: JSON.stringify(book),
     })
       .then((response) => response.json())
-      .then((data) => {
-        console.log(data);
-      })
       .catch((error) => console.log(error));
+    setBook({});
   }
 
   return (
@@ -36,14 +30,21 @@ function AddBooks() {
       <h1>Add your books!</h1>
       <form className={styles.booksForm} onSubmit={addBook}>
         {/* we need to have values in the input so we can find the right property on the book object to write on */}
-        <Input name="name" label="Book name" type="text" onChange={onChange} />
+        <Input
+          name="name"
+          label="Book name"
+          type="text"
+          onChange={onChange}
+          value={book.name || ''} //by doing it we guarantee that when the book.name is `undefined` (like on line 25), we set it back to ''
+        />
         <Input
           name="author"
           label="Book author"
           type="text"
           onChange={onChange}
+          value={book.author || ''}
         />
-        <input className={styles.addBook} value="Add Book" type="submit" />
+        <SubmitButton value="Add Book" type="submit" />
       </form>
     </section>
   );

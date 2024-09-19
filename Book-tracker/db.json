@@ -1,3 +1,24 @@
 {
-  "book-list": []
+  "book-list": [
+    {
+      "id": "0297",
+      "name": "How to win friends and influence people",
+      "author": "Dale Carnegie"
+    },
+    {
+      "id": "8066",
+      "name": "Atomic habits",
+      "author": "James Clear"
+    },
+    {
+      "id": "5c36",
+      "name": "The bible",
+      "author": "God"
+    },
+    {
+      "id": "cc48",
+      "name": "Armas da persuasao",
+      "author": "Robert B. Cialdini"
+    }
+  ]
 }

@@ -1,0 +1,14 @@
+.addBook {
+  padding: .7em;
+  font-size: large;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: ease .3s;
+  margin-top: 2em;
+}
+
+.addBook:hover {
+  background-color: #2b7a77;
+}

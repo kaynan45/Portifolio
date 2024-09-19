@@ -1,10 +1,16 @@
-import styles from './Input.module.css'
+import styles from "./Input.module.css";
 
-function Input({ label, type, name ,onChange }) {
+function Input({ label, type, name, onChange, value }) {
   return (
     <div className={styles.book}>
       <label>{label}</label>
-      <input type={type} name={name} className={styles.bookInputs} onChange={onChange}/>
+      <input
+        type={type}
+        name={name}
+        className={styles.bookInputs}
+        onChange={onChange}
+        value={value}
+      />
     </div>
   );
 }
