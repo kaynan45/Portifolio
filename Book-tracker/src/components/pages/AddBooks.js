@@ -10,11 +10,12 @@ function AddBooks() {
   // }
 
   function onChange(e) {
-    (setBook({...book,[e.target.value]: e.target.name}))
-    console.log(book)
+    //By spreading (...book), we're keeping the previous data intact while updating only the specific field that changed.
+    setBook({ ...book, [e.target.name]: e.target.value });
+    console.log(book);
   }
 
-  function addBookName(e) {
+  function addBook(e) {
     e.preventDefault();
     fetch("http://localhost:5000/book-list", {
       method: "POST",
@@ -33,15 +34,16 @@ function AddBooks() {
   return (
     <section className={styles.bookSection}>
       <h1>Add your books!</h1>
-      <form className={styles.booksForm}>
-        <Input label="Book name" type="text" onChange={onChange}/>
-        <Input label="Book author" type="text" onChange={onChange}/>
-        <input
-          className={styles.addBook}
-          value="Add Book"
-          type="submit"
-          // onClick={addBookName}
+      <form className={styles.booksForm} onSubmit={addBook}>
+        {/* we need to have values in the input so we can find the right property on the book object to write on */}
+        <Input name="name" label="Book name" type="text" onChange={onChange} />
+        <Input
+          name="author"
+          label="Book author"
+          type="text"
+          onChange={onChange}
         />
+        <input className={styles.addBook} value="Add Book" type="submit" />
       </form>
     </section>
   );
