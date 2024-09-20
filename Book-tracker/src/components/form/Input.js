@@ -10,6 +10,7 @@ function Input({ label, type, name, onChange, value }) {
         className={styles.bookInputs}
         onChange={onChange}
         value={value}
+        requireda
       />
     </div>
   );

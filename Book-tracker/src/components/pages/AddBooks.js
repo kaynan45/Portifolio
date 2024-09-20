@@ -2,9 +2,11 @@ import Input from "../form/Input";
 import SubmitButton from "../form/SubmitButton";
 import styles from "./AddBooks.module.css";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function AddBooks() {
-  const [book, setBook] = useState({name: '', author: ''});
+  const [book, setBook] = useState({ name: "", author: "" });
+  const navigate = useNavigate();
 
   function onChange(e) {
     //By spreading (...book), we're keeping the previous data intact while updating only the specific field that changed.
@@ -21,6 +23,10 @@ function AddBooks() {
       body: JSON.stringify(book),
     })
       .then((response) => response.json())
+      .then((data) => {
+        const state = {message: "Your book was successfully added!"}
+        navigate("/book-list", {state});
+      })
       .catch((error) => console.log(error));
     setBook({});
   }
@@ -35,14 +41,14 @@ function AddBooks() {
           label="Book name"
           type="text"
           onChange={onChange}
-          value={book.name || ''} //by doing it we guarantee that when the book.name is `undefined` (like on line 25), we set it back to ''
+          value={book.name || ""} //by doing it we guarantee that when the book.name is `undefined` (like on line 25), we set it back to ''
         />
         <Input
           name="author"
           label="Book author"
           type="text"
           onChange={onChange}
-          value={book.author || ''}
+          value={book.author || ""}
         />
         <SubmitButton value="Add Book" type="submit" />
       </form>

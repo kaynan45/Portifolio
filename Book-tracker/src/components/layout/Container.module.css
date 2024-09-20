@@ -4,10 +4,15 @@
   justify-content: space-between;
   margin: 0 auto;
   flex-wrap: wrap;
-  align-items: center;
+  /* align-items: center; */
   justify-content: center;
+  /* border: solid red; */
 }
 
 .min-height {
   min-height: 90%;
+}
+
+.start {
+  justify-content: flex-start;
 }
