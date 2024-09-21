@@ -3,17 +3,14 @@
     {
       "id": "0297",
       "name": "How to win friends and influence people",
-      "author": "Dale Carnegie"
+      "author": "Dale Carnegie",
+      "isbn": "9780671027032"
     },
     {
       "id": "8066",
       "name": "Atomic habits",
-      "author": "James Clear"
-    },
-    {
-      "id": "5c36",
-      "name": "The bible",
-      "author": "God"
+      "author": "James Clear",
+      "isbn": "9780735211292"
     },
     {
       "id": "cc48",
@@ -21,29 +18,19 @@
       "author": "Robert B. Cialdini"
     },
     {
-      "id": "6852",
+      "id": "e078",
+      "name": "Armas, Germes e Aço",
+      "author": "Jared Diamond"
+    },
+    {
+      "id": "0d22",
       "name": "The Lord of the Rings",
       "author": "J.S Tolken"
     },
     {
-      "id": "fa3e",
-      "name": "One question per day",
-      "author": "Unknown"
-    },
-    {
-      "id": "2487",
-      "name": "test",
-      "author": "test"
-    },
-    {
-      "id": "3cbf",
-      "name": "O planeta dos macacos",
-      "author": "Pierre Boulle"
-    },
-    {
-      "id": "e078",
-      "name": "Armas, Germes e Aço",
-      "author": "Jared Diamond"
+      "id": "4775",
+      "name": "The Lord of the Rings",
+      "author": "John Ronald Reuel Tolkien"
     }
   ]
 }
