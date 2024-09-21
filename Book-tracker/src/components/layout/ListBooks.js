@@ -20,7 +20,7 @@ function ListBooks({ book }) {
     <div className={styles.bookContainer}>
       <div className={styles.titleContainer}>
         <h1>My tracked books</h1>
-        <Button buttonText="Add a new book!" buttonPath="add-books" />
+        <Button buttonText="Add a new book!" buttonPath="../add-books" />
       </div>
       {message && <Message messageText={message} /> }
       <Container customClass="start">
@@ -36,17 +36,6 @@ function ListBooks({ book }) {
         </ul>
       </Container>
     </div>
-    // <div className={styles.test}>
-    //   <Container className={styles.test}>
-    //     <ul className={styles.bookList}>
-    //       {book.map((book) => (
-    //         <li className={styles.bookAuthor} key={book.id}>
-    //           <span>{book.author}</span> <p>{book.name}</p>
-    //         </li>
-    //       ))}
-    //     </ul>
-    //   </Container>
-    // </div>
   );
 }
 
