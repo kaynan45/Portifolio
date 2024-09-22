@@ -3,19 +3,18 @@
     {
       "id": "0297",
       "name": "How to win friends and influence people",
-      "author": "Dale Carnegie",
-      "isbn": "9780671027032"
+      "author": "Dale Carnegie"
     },
     {
       "id": "8066",
       "name": "Atomic habits",
-      "author": "James Clear",
-      "isbn": "9780735211292"
+      "author": "James Clear"
     },
     {
       "id": "cc48",
       "name": "Armas da persuasao",
-      "author": "Robert B. Cialdini"
+      "author": "Robert B. Cialdini",
+      "isbn": "12539702"
     },
     {
       "id": "e078",
@@ -23,14 +22,14 @@
       "author": "Jared Diamond"
     },
     {
-      "id": "0d22",
-      "name": "The Lord of the Rings",
-      "author": "J.S Tolken"
-    },
-    {
       "id": "4775",
       "name": "The Lord of the Rings",
-      "author": "John Ronald Reuel Tolkien"
+      "author": "J.R Tolkien"
+    },
+    {
+      "id": "7628",
+      "name": "Don Quixote",
+      "author": "Miguel de Cervantes"
     }
   ]
 }
