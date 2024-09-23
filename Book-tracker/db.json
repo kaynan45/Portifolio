@@ -11,25 +11,19 @@
       "author": "James Clear"
     },
     {
-      "id": "cc48",
-      "name": "Armas da persuasao",
-      "author": "Robert B. Cialdini",
-      "isbn": "12539702"
-    },
-    {
-      "id": "e078",
-      "name": "Armas, Germes e Aço",
-      "author": "Jared Diamond"
-    },
-    {
       "id": "4775",
       "name": "The Lord of the Rings",
-      "author": "J.R Tolkien"
+      "author": "J.R.R Tolkien"
     },
     {
       "id": "7628",
       "name": "Don Quixote",
       "author": "Miguel de Cervantes"
+    },
+    {
+      "id": "e445",
+      "name": "The Hobbit",
+      "author": "J.R.R Tolkien"
     }
   ]
 }
