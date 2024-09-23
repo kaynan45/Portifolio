@@ -24,6 +24,11 @@
       "id": "e445",
       "name": "The Hobbit",
       "author": "J.R.R Tolkien"
+    },
+    {
+      "id": "00e5",
+      "name": "Moby-Dick",
+      "author": "Herman Melville"
     }
   ]
 }
