@@ -19,7 +19,7 @@ function BookList() {
       .catch((err) => console.log(err));
   }, []);
 
-  return <ListBooks book = {book}/>;
+  return <ListBooks book={book} setBook={setBook} />;
 }
 
 export default BookList;

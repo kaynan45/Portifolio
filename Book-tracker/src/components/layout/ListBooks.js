@@ -8,7 +8,7 @@ import Button from "./Button";
 import Message from "./Message";
 import Loading from "../Utils/Loading";
 
-function ListBooks({ book }) {
+function ListBooks({ book, setBook }) {
   const location = useLocation();
 
   let message = "";
@@ -38,6 +38,14 @@ function ListBooks({ book }) {
                 ...prevCovers, // Spreading the object to maintain the previous data of it
                 [singleBook.id]: coverId, // Dynamically creating a key (being each book id) and a value that is the cover id provided by the API
               }));
+              setBook((prevBooks) => //Calls the function to set the book array
+                prevBooks.map((bookObject) => //Loops through the book array and create...
+                  bookObject.id === singleBook.id
+                    ? { ...bookObject, coverId: coverId }
+                    : bookObject
+                  )
+                );
+                console.log(book)
             }
           }
         })
