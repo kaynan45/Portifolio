@@ -19,7 +19,7 @@ function ListBooks({ book, setBook }) {
 
   const [covers, setCovers] = useState({});
 
-  useEffect(() => {
+  useEffect((setBook) => {
     book.forEach((singleBook) => {
       //? Braking the book array into singleBooks objects, doing that we can...
       fetch(
@@ -67,7 +67,7 @@ function ListBooks({ book, setBook }) {
               <span>
                 {/* Because that is a public url, we don`t have to fetch it, we can just provide the url as a src and boom */}
                 {covers[singleBook.id] ? (
-                  <img
+                  <img alt="book-cover"
                     src={`https://covers.openlibrary.org/b/id/${
                       covers[singleBook.id]
                     }-M.jpg`}
