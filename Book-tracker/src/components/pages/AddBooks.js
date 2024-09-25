@@ -13,6 +13,15 @@ function AddBooks() {
     setBook({ ...book, [e.target.name]: e.target.value });
   }
 
+  const disableButton = () => {
+    if (book.name && book.author !== "") {
+      return false;
+    }
+    return true;
+  }
+
+  const disableStatus = disableButton()
+
   function addBook(e) {
     e.preventDefault();
     fetch("http://localhost:5000/book-list", {
@@ -24,8 +33,8 @@ function AddBooks() {
     })
       .then((response) => response.json())
       .then((data) => {
-        const state = {message: "Your book was successfully added!"}
-        navigate("/book-list", {state});
+        const state = { message: "Your book was successfully added!" };
+        navigate("/book-list", { state });
       })
       .catch((error) => console.log(error));
     setBook({});
@@ -50,7 +59,7 @@ function AddBooks() {
           onChange={onChange}
           value={book.author || ""}
         />
-        <SubmitButton value="Add Book" type="submit" />
+        <SubmitButton disabled={disableStatus} value="Add Book" type="submit" />
       </form>
     </section>
   );

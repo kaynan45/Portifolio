@@ -1,10 +1,15 @@
-import styles from './SubmitButton.module.css'
+import styles from "./SubmitButton.module.css";
 
-function SubmitButton({ value, type, method }) {
-
+function SubmitButton({ value, type, method, disabled }) {
   return (
-    <input className={styles.addBook} value={value} type={type} onClick={method}/>
-  )
+    <input
+      disabled={disabled}
+      className={styles.addBook}
+      value={value}
+      type={type}
+      onClick={method}
+    />
+  );
 }
 
-export default SubmitButton
+export default SubmitButton;
