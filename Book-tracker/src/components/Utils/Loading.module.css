@@ -1,11 +1,11 @@
 .loader {
   margin: auto;
-  border: 10px solid #2b7a78;
+  border: 7px solid #2b7a78;
   border-radius: 50%;
-  border-top: 10px solid #17252A;
+  border-top: 7px solid #17252A;
   width: 100px;
   height: 100px;
-  animation: spinner 2s linear infinite;
+  animation: spinner 1.3s linear infinite;
 }
 
 @keyframes spinner {
