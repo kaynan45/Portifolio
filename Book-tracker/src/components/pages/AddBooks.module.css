@@ -7,9 +7,16 @@
 }
 
 .bookSection h1 {
-  color: #feffff;
+  color: #17252A;
   margin: 1em;
-  font-size: 2em;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.bookSection h1 span {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #def2f1;
 }
 
 .booksForm {

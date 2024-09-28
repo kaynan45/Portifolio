@@ -19,44 +19,41 @@ function ListBooks({ book, setBook }) {
 
   const [covers, setCovers] = useState({});
 
-  useEffect((setBook) => {
-    book.forEach((singleBook) => {
-      //? Braking the book array into singleBooks objects, doing that we can...
-      fetch(
-        `https://openlibrary.org/search.json?title=${singleBook.name}&author=${singleBook.author}` // Use the created singleBook object to get the name and the author of the books
-      )
-        .then((response) => response.json())
-        .then((data) => {
-          //data provided by the API
-          if (data.docs && data.docs.length > 0) {
-            //if the data docs exists...
-            const coverId = data.docs[0].cover_i; // Allocate it`s value into a variable named coverId
-            if (coverId) {
-              //If coverId have some value inside
-              setCovers((prevCovers) => ({
-                // `prevCovers` is a reference to the previous state of `covers`
-                ...prevCovers, // Spreading the object to maintain the previous data of it
-                [singleBook.id]: coverId, // Dynamically creating a key (being each book id) and a value that is the cover id provided by the API
-              }));
-              setBook((prevBooks) => //Calls the function to set the book array
-                prevBooks.map((bookObject) => //Loops through the book array and create...
-                  bookObject.id === singleBook.id
-                    ? { ...bookObject, coverId: coverId }
-                    : bookObject
-                  )
-                );
-                console.log(book)
+  useEffect(
+    (setBook) => {
+      book.forEach((singleBook) => {
+        //? Braking the book array into singleBooks objects, doing that we can...
+        fetch(
+          `https://openlibrary.org/search.json?title=${singleBook.name}&author=${singleBook.author}` // Use the created singleBook object to get the name and the author of the books
+        )
+          .then((response) => response.json())
+          .then((data) => {
+            //data provided by the API
+            if (data.docs && data.docs.length > 0) {
+              //if the data docs exists...
+              const coverId = data.docs[0].cover_i; // Allocate it`s value into a variable named coverId
+              if (coverId) {
+                //If coverId have some value inside
+                setCovers((prevCovers) => ({
+                  // `prevCovers` is a reference to the previous state of `covers`
+                  ...prevCovers, // Spreading the object to maintain the previous data of it
+                  [singleBook.id]: coverId, // Dynamically creating a key (being each book id) and a value that is the cover id provided by the API
+                }));
+              }
             }
-          }
-        })
-        .catch((error) => console.log(error));
-    });
-  }, [book]);
+          })
+          .catch((error) => console.log(error));
+      });
+    },
+    [book]
+  );
 
   return (
     <div className={styles.bookContainer}>
       <div className={styles.titleContainer}>
-        <h1>My tracked books</h1>
+        <h1>
+          My <span>Tracked Books</span>
+        </h1>
         <Button buttonText="Add a new book!" buttonPath="../add-books" />
       </div>
       {message && <Message messageText={message} />}
@@ -67,7 +64,8 @@ function ListBooks({ book, setBook }) {
               <span>
                 {/* Because that is a public url, we don`t have to fetch it, we can just provide the url as a src and boom */}
                 {covers[singleBook.id] ? (
-                  <img alt="book-cover"
+                  <img
+                    alt="book-cover"
                     src={`https://covers.openlibrary.org/b/id/${
                       covers[singleBook.id]
                     }-M.jpg`}
@@ -79,6 +77,7 @@ function ListBooks({ book, setBook }) {
               <h3>{singleBook.name}</h3> <p>{singleBook.author}</p>
             </li>
           ))}
+          {/* <h1 className={styles.downTitle}>Keep adding books!</h1> */}
         </ul>
       </Container>
     </div>

@@ -42,7 +42,7 @@ function AddBooks() {
 
   return (
     <section className={styles.bookSection}>
-      <h1>Add your books!</h1>
+      <h1>Add Your <span>Books!</span></h1>
       <form className={styles.booksForm} onSubmit={addBook}>
         {/* we need to have values in the input so we can find the right property on the book object to write on */}
         <Input

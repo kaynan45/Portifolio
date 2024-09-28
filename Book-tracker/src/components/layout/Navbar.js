@@ -11,7 +11,9 @@ function Navbar() {
       <Container>
         <ul>
           <li>
+          <Link to="/">
             <img className="logo" src={logo} />
+          </Link>
           </li>
           <li>
             <Link to="/">Home</Link>

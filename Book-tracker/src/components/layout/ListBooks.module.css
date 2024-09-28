@@ -1,5 +1,4 @@
 .bookContainer {
-  /* border: solid red; */
   padding: 3em 1em;
 }
 
@@ -9,13 +8,29 @@
   margin-bottom: 2em;
 }
 
+.titleContainer h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  background-color: #2E8B8B;
+  padding: .1em;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, .3) 0px 3px 5px;
+}
+
+.titleContainer h1 span {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #def2f1;
+}
+
 .books {
   display: flex;
   flex-wrap: wrap;
   width: 100%;
-  border: 1px solid #f3f3f3;
+  border: 2px solid #f3f3f3;
   align-items: center;
   justify-content: center;
+  padding: 1em;
 }
 
 .book {
@@ -30,7 +45,7 @@
   width: 350px;
   min-height: 350px;
   height: fit-content;
-  background-color: #def2f1;
+  background-color: #f3f3f3;
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
@@ -58,5 +73,14 @@
 .book p {
   font-style: italic;
   color: #2E8B8B;
+}
+
+.downTitle {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #def2f1;
+  background-color: #2E8B8B;
+  padding: .4em;
+  border-radius: 5px;
 }
 
