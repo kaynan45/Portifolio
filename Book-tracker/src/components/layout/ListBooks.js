@@ -1,4 +1,4 @@
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 import styles from "./ListBooks.module.css";
@@ -61,19 +61,27 @@ function ListBooks({ book, setBook }) {
         <ul className={styles.books}>
           {book.map((singleBook) => (
             <li className={styles.book} key={singleBook.id}>
-              <span>
-                {/* Because that is a public url, we don`t have to fetch it, we can just provide the url as a src and boom */}
-                {covers[singleBook.id] ? (
-                  <img
-                    alt="book-cover"
-                    src={`https://covers.openlibrary.org/b/id/${
-                      covers[singleBook.id]
-                    }-M.jpg`}
-                  />
-                ) : (
-                  <Loading />
-                )}
-              </span>
+              <Link
+                to={`https://www.amazon.com/s?k=${encodeURIComponent(
+                  singleBook.name
+                )}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span>
+                  {/* Because that is a public url, we don`t have to fetch it, we can just provide the url as a src and boom */}
+                  {covers[singleBook.id] ? (
+                    <img
+                      alt="book-cover"
+                      src={`https://covers.openlibrary.org/b/id/${
+                        covers[singleBook.id]
+                      }-M.jpg`}
+                    />
+                  ) : (
+                    <Loading />
+                  )}
+                </span>
+              </Link>
               <h3>{singleBook.name}</h3> <p>{singleBook.author}</p>
             </li>
           ))}
