@@ -7,12 +7,12 @@ import logo from "../../img/book.png";
 
 function Navbar() {
   return (
-    <nav>
+    <nav className={styles.nav}>
       <Container>
         <ul>
           <li>
           <Link to="/">
-            <img className="logo" src={logo} />
+            <img className="logo" src={logo} alt="Book Tracker logo"/>
           </Link>
           </li>
           <li>
@@ -23,6 +23,9 @@ function Navbar() {
           </li>
           <li>
             <Link to="/book-list">Book list</Link>
+          </li>
+          <li>
+            <Link to="/read-books">Read Books</Link>
           </li>
         </ul>
       </Container>

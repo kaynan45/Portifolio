@@ -19,6 +19,10 @@ function ListBooks({ book, setBook }) {
 
   const [covers, setCovers] = useState({});
 
+  function bookRead(bookName) {
+
+  }
+
   useEffect(
     (setBook) => {
       book.forEach((singleBook) => {
@@ -83,6 +87,7 @@ function ListBooks({ book, setBook }) {
                 </span>
               </Link>
               <h3>{singleBook.name}</h3> <p>{singleBook.author}</p>
+              <Button buttonText="Book read" buttonPath="../read-books"/>
             </li>
           ))}
           {/* <h1 className={styles.downTitle}>Keep adding books!</h1> */}
