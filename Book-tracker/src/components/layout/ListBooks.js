@@ -7,6 +7,7 @@ import Container from "../layout/Container";
 import Button from "./Button";
 import Message from "./Message";
 import Loading from "../Utils/Loading";
+import Ratings from "../Utils/Ratings"
 
 function ListBooks({ book, setBook }) {
   const location = useLocation();
@@ -17,31 +18,29 @@ function ListBooks({ book, setBook }) {
     message = location.state.message;
   }
 
+  const [rating, setRatings] = useState({});
   const [covers, setCovers] = useState({});
 
-  function bookRead(bookName) {
-
-  }
-
   useEffect(
-    (setBook) => {
+    () => {
       book.forEach((singleBook) => {
         //? Braking the book array into singleBooks objects, doing that we can...
         fetch(
-          `https://openlibrary.org/search.json?title=${singleBook.name}&author=${singleBook.author}` // Use the created singleBook object to get the name and the author of the books
+          `https://openlibrary.org/search.json?title=${singleBook.name}&author=${singleBook.author}`
         )
           .then((response) => response.json())
           .then((data) => {
-            //data provided by the API
+            const bookRating = Math.round(data.docs[0].ratings_sortable);
+            setRatings((prevRatings) => {
+              return {...prevRatings, [singleBook.id]: bookRating}
+            })
+            // console.log(rating)
             if (data.docs && data.docs.length > 0) {
-              //if the data docs exists...
-              const coverId = data.docs[0].cover_i; // Allocate it`s value into a variable named coverId
+              const coverId = data.docs[0].cover_i;
               if (coverId) {
-                //If coverId have some value inside
                 setCovers((prevCovers) => ({
-                  // `prevCovers` is a reference to the previous state of `covers`
-                  ...prevCovers, // Spreading the object to maintain the previous data of it
-                  [singleBook.id]: coverId, // Dynamically creating a key (being each book id) and a value that is the cover id provided by the API
+                  ...prevCovers,
+                  [singleBook.id]: coverId,
                 }));
               }
             }
@@ -87,7 +86,8 @@ function ListBooks({ book, setBook }) {
                 </span>
               </Link>
               <h3>{singleBook.name}</h3> <p>{singleBook.author}</p>
-              <Button buttonText="Book read" buttonPath="../read-books"/>
+              <Button buttonText="Book read" buttonPath="../read-books" />
+              {/* <Ratings rating={rating}/> */}
             </li>
           ))}
           {/* <h1 className={styles.downTitle}>Keep adding books!</h1> */}
