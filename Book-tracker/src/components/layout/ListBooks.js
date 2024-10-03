@@ -7,7 +7,7 @@ import Container from "../layout/Container";
 import Button from "./Button";
 import Message from "./Message";
 import Loading from "../Utils/Loading";
-import Ratings from "../Utils/Ratings"
+// import Ratings from "../Utils/Ratings"
 
 function ListBooks({ book, setBook }) {
   const location = useLocation();
