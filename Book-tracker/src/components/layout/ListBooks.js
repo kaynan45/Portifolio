@@ -18,7 +18,7 @@ function ListBooks({ book, setBook }) {
     message = location.state.message;
   }
 
-  const [rating, setRatings] = useState({});
+  // const [rating, setRatings] = useState({});
   const [covers, setCovers] = useState({});
 
   useEffect(
@@ -30,10 +30,10 @@ function ListBooks({ book, setBook }) {
         )
           .then((response) => response.json())
           .then((data) => {
-            const bookRating = Math.round(data.docs[0].ratings_sortable);
-            setRatings((prevRatings) => {
-              return {...prevRatings, [singleBook.id]: bookRating}
-            })
+            // const bookRating = Math.round(data.docs[0].ratings_sortable);
+            // setRatings((prevRatings) => {
+            //   return {...prevRatings, [singleBook.id]: bookRating}
+            // })
             // console.log(rating)
             if (data.docs && data.docs.length > 0) {
               const coverId = data.docs[0].cover_i;
