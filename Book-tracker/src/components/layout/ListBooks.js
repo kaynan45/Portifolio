@@ -63,7 +63,7 @@ function ListBooks({ book, setBook }) {
           .catch((error) => console.log(error));
       }
     });
-  }, [book]);
+  }, [book, covers, rating, setBook]);
 
   return (
     <div className={styles.bookContainer}>
