@@ -7,7 +7,7 @@ import Container from "../layout/Container";
 import Button from "./Button";
 import Message from "./Message";
 import Loading from "../Utils/Loading";
-// import Ratings from "../Utils/Ratings"
+import Stars from "../Utils/Stars";
 
 function ListBooks({ book, setBook }) {
   const location = useLocation();
@@ -18,38 +18,52 @@ function ListBooks({ book, setBook }) {
     message = location.state.message;
   }
 
-  // const [rating, setRatings] = useState({});
   const [covers, setCovers] = useState({});
+  const [rating, setRatings] = useState({});
 
-  useEffect(
-    () => {
-      book.forEach((singleBook) => {
-        //? Braking the book array into singleBooks objects, doing that we can...
+  useEffect(() => {
+    book.forEach((singleBook) => {
+      //? Braking the book array into singleBooks objects, doing that we can...
+      if (!covers[singleBook.id] || !rating[singleBook.id]) {
+        //If the single book don`t have either covers or rating it`ll fetch this data
         fetch(
           `https://openlibrary.org/search.json?title=${singleBook.name}&author=${singleBook.author}`
         )
           .then((response) => response.json())
           .then((data) => {
-            // const bookRating = Math.round(data.docs[0].ratings_sortable);
-            // setRatings((prevRatings) => {
-            //   return {...prevRatings, [singleBook.id]: bookRating}
-            // })
-            // console.log(rating)
             if (data.docs && data.docs.length > 0) {
-              const coverId = data.docs[0].cover_i;
-              if (coverId) {
-                setCovers((prevCovers) => ({
-                  ...prevCovers,
-                  [singleBook.id]: coverId,
-                }));
-              }
+              const coverId = data.docs[0].cover_i; //Getting the data of the coverId of the book
+              const bookRating = data.docs[0].ratings_sortable; //Getting the book rating
+
+              // Update covers and ratings states
+              setCovers((prevCovers) => ({
+                ...prevCovers,
+                [singleBook.id]: coverId, // Adding coverId for this book
+              }));
+
+              setRatings((prevRatings) => ({
+                ...prevRatings,
+                [singleBook.id]: bookRating, // Adding rating for this book
+              }));
+
+              setBook((prevBooks) => {
+                return prevBooks.map((b) => {
+                  if (b.id === singleBook.id) {
+                    return {
+                      ...b,
+                      coverId: coverId || b.coverId, // Update the coverId if fetched
+                      rating: bookRating || b.rating, // Update the rating if fetched
+                    };
+                  }
+                  return b;
+                });
+              });
             }
           })
           .catch((error) => console.log(error));
-      });
-    },
-    [book]
-  );
+      }
+    });
+  }, [book]);
 
   return (
     <div className={styles.bookContainer}>
@@ -86,8 +100,8 @@ function ListBooks({ book, setBook }) {
                 </span>
               </Link>
               <h3>{singleBook.name}</h3> <p>{singleBook.author}</p>
+              <Stars ratings={rating[singleBook.id]} />
               <Button buttonText="Book read" buttonPath="../read-books" />
-              {/* <Ratings rating={rating}/> */}
             </li>
           ))}
           {/* <h1 className={styles.downTitle}>Keep adding books!</h1> */}
