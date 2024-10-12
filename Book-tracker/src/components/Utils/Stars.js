@@ -1,10 +1,15 @@
 import styles from "./Stars.module.css";
 
 function Stars({ ratings }) {
-  // ratings && console.log(ratings)
+  // console.log(ratings)
+  function createStars() {
+    for (let i = 0; i < Math.round(ratings); i++) {
+      return <p>{i}</p>
+    }
+  }
   return (
     <span>
-      {ratings}
+      {createStars()}
     </span>
   )
 }
